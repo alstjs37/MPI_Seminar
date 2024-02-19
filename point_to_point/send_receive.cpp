@@ -22,11 +22,11 @@ int main(int argc, char* argv[]) {
 
     // 메시지 송신자가 일부 데이터 전송
     if (rank == sender) {
-        send_data = 42;
+        send_data = 2024;
 
         // MPI_Send(전송할 데이터의 시작 주소, 전송할 데이터의 갯수, 전송할 데이터 타입, 목적지 프로세서 랭크, 메세지를 식별하는 태그, 커뮤니케이터)
         MPI_Send(&send_data, 1, MPI_INT, receiver, 0, MPI_COMM_WORLD);
-        cout << "Process " << rank << " send data: " << send_data << endl;
+        cout << "Process " << rank << " send data ( " << send_data << " ) to Process " << receiver << endl;
     }
 
     // 메시지 수신자가 데이터 수신
