@@ -29,8 +29,8 @@ int main(int argc, char *argv[]) {
     cout << "[SEND] RANK : " << rank << " AND I WILL SEND ( " << send_msg << " )" << endl;
     sleep(1);
 
-    // MPI_Gather(송신버퍼의 시작 주소, 송신버퍼의 원소 갯수, 송신 버퍼 원소의 데이터 타입, 
-    //            수신 버퍼의 주소, 수신할 원소의 갯수, 수신 버퍼 원소의 데이터 타입, 수신(루트)프로세스의 랭크, 커뮤니케이터)
+    // MPI_Allgather(송신 버퍼의 시작 주소, 송신 버퍼의 원소 개수, 송신 버퍼의 데이터 타입, 
+    //               수신 버퍼의 주소, 각 프로세스로부터 수신된 데이터 갯수, 수신버퍼 데이터 타입, 커뮤니케이터)
     MPI_Allgather(&send_msg, 1, MPI_INT, buff, 1, MPI_INT, MPI_COMM_WORLD);
 
     // 프로세스 j의 데이터 -> 모든 수신 버퍼 j 번째 블록에 저장
