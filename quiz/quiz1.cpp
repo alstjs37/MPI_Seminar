@@ -17,7 +17,6 @@ void func1(int rank, int size) {
         //          메세지의 상태를 나타내는 MPI_Status 구조체에 대한 포인터, 필요하지 않을 시 MPI_STATUS_IGNORE를 사용할 수 있음)
         MPI_Recv(buff1+1, 1, MPI_INT, sender, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     } else if(rank == sender) {
-        cout << "";
         // MPI_Send(전송할 데이터의 시작 주소, 전송할 데이터의 갯수, 전송할 데이터 타입, 목적지 프로세서 랭크, 메세지를 식별하는 태그, 커뮤니케이터)
         MPI_Send(&data1, 1, MPI_INT, ROOT, 0, MPI_COMM_WORLD);
     }
@@ -40,7 +39,7 @@ void func3(int rank, int size) {
     MPI_Allgather(data3+rank*2, 2, MPI_INT, buff3, 2, MPI_INT, MPI_COMM_WORLD);
 }
 
-void print_result(int rank, int size) {
+void printResult(int rank, int size) {
     int result[12] = {0,};
 
     if(rank == ROOT) {
@@ -48,6 +47,7 @@ void print_result(int rank, int size) {
         copy(buff2, buff2+3, result+3);
         copy(buff3, buff3+6, result+6);
 
+        cout << "[SUCCESS] ";
         for (int i = 0; i < 12; i++) {
             if (i == 3) cout << " ";
             printf("%c", result[i]);
@@ -67,12 +67,13 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+    if (size != 3) {cout << "[ERROR] INCORRECT NUMBER OF PROCESS " << endl; return 0;}
+
     func1(rank, size);
     func2(rank, size);
     func3(rank, size);
 
-    MPI_Barrier(MPI_COMM_WORLD);
-    print_result(rank, size);
+    printResult(rank, size);
 
     // MPI 종료
     MPI_Finalize();
