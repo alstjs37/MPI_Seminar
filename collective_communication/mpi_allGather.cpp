@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     send_msg = rank + 1;
     
     cout << "[BEFORE] RANK: " << rank << " AND I RECV (ALLGATHER): ";
-    for(int i = 0; i < size; i++) cout << buff[i] << " ";
+    for (int i = 0; i < size; i++) cout << buff[i] << " ";
     cout << endl;
 
     sleep(1);
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 
     // 프로세스 j의 데이터 -> 모든 수신 버퍼 j 번째 블록에 저장
     cout << "[AFTER] RANK: " << rank << " AND I RECV (ALLGATHER): ";
-    for(int i = 0; i < size; i++) cout << buff[i] << " ";
+    for (int i = 0; i < size; i++) cout << buff[i] << " ";
     cout << endl;
     
     // MPI 종료
