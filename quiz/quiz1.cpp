@@ -84,6 +84,8 @@ void printResult(int rank, int size) {
         copy(buff2, buff2+3, result+3);
         copy(buff3, buff3+6, result+6);
 
+        if (result[1] == 37) { cout << "[ERROR] 코드를 모두 작성하고 실행시켜 주세요 ^^" << endl; exit(1); }
+
         cout << "[SUCCESS] ";
         for (int i = 0; i < 12; i++) {
             if (i == 3) cout << " ";
