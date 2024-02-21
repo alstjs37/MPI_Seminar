@@ -98,12 +98,12 @@ int operation(int rank, int size, int sum) {
     즉, 각 프로세스로부터 데이터를 모아서 하나의 값으로 환산하고, 그 결과를 모든 프로세스에 저장하는 함수를 사용하면 됩니다.
 */
 void func2(int rank, int size, int sum){
-    int result;
+    int result = 1;
 
     /* 코드를 작성해 주세요 (1줄) */
 
 
-    cout << "[RESULT] RANK: " << rank << " [FUNC2] with PRODUCT operation! RESULT = " << result << endl;
+    cout << "[RESULT] RANK: " << rank << " [FUNC2] with SUM operation! RESULT = " << result << endl;
 
 }
 
@@ -122,14 +122,16 @@ int main(int argc, char *argv[]) {
 
     // 프로세스의 수에 따라 배열 초기화
     generateArray(rank, size, arr);
-
+    sleep(1);
     // 각 프로세스에게 데이터를 나눠주기
     func1(rank, size, arr);
 
     MPI_Barrier(MPI_COMM_WORLD);
+    sleep(1);
     // 각 프로세스에서 특정 계산을 진행
     sum = operation(rank, size, sum);
     MPI_Barrier(MPI_COMM_WORLD);
+    sleep(1);
 
     // 계산한 결과 값을 하나의 값으로 만들어 모든 프로세스에 저장
     func2(rank, size, sum);
