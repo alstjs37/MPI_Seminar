@@ -131,7 +131,7 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    // 프로세스는 3개를 사용해 주세요
+    // 프로세스는 3개를 사용해 주세요.
     if (size != 3) {cout << "[ERROR] INCORRECT NUMBER OF PROCESS " << endl; return 0;}
 
     // func1, func2, func3을 작성해 주세요.
