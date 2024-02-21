@@ -6,6 +6,16 @@ using namespace std;
 
 int ROOT = 0;
 
+/*  [ func1 설명 ]
+    MPI 함수 중 point to point 함수를 사용합니다.
+    
+    sender process (rank = 1)이 ROOT process (rank = 0)에게 data1을 전달합니다.
+    ROOT process (rank = 0)은 sender process (rank = 1)으로 부터 data1을 전달받아 그 값을 buff1[1]에 작성합니다.
+*/
+/*  [ HINT ]
+    배열의 이름은 배열의 시작주소를 담고 있습니다.
+    배열의 n번째 인덱스는 (배열주소 + n) 형식으로 접근 가능합니다.
+*/
 int buff1[3] = {68, 37, 69};
 void func1(int rank, int size) {
     int sender = 1;
@@ -67,6 +77,7 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+    // 프로세스는 3개를 사용해주세요
     if (size != 3) {cout << "[ERROR] INCORRECT NUMBER OF PROCESS " << endl; return 0;}
 
     func1(rank, size);
