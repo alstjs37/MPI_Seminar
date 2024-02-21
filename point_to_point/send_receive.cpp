@@ -25,7 +25,9 @@ int main(int argc, char* argv[]) {
         send_data = 2024;
 
         // MPI_Send(전송할 데이터의 시작 주소, 전송할 데이터의 갯수, 전송할 데이터 타입, 목적지 프로세서 랭크, 메세지를 식별하는 태그, 커뮤니케이터)
-        MPI_Send(&send_data, 1, MPI_INT, receiver, 0, MPI_COMM_WORLD);
+        /* 코드를 작성해 주세요 (1줄) */
+
+
         cout << "Process " << rank << " send data ( " << send_data << " ) to Process " << receiver << endl;
     }
 
@@ -36,7 +38,9 @@ int main(int argc, char* argv[]) {
         // MPI_Recv(수신할 데이터를 저장할 버퍼의 시작 주소, 수신할 데이터의 개수, 수신할 데이터의 타입, 
         //          송신자 프로세스의 랭크, 송신자가 메시지에 부여한 태그, 커뮤니케이터,
         //          메세지의 상태를 나타내는 MPI_Status 구조체에 대한 포인터, 필요하지 않을 시 MPI_STATUS_IGNORE를 사용할 수 있음)
-        MPI_Recv(&received_data, 1, MPI_INT, sender, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        /* 코드를 작성해 주세요 (1줄) */
+
+        
         cout << "[After] Process " << rank << "'s received data: " << received_data << endl;
     }
 

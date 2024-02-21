@@ -1,4 +1,3 @@
-// practice MPI_boradcast
 #include <mpi.h>
 #include <unistd.h>
 #include <iostream>
@@ -31,7 +30,9 @@ int main(int argc, char *argv[]) {
     cout << endl;
 
     // MPI_Bcast(버퍼 시작 주소, 버퍼 원소 갯수, 버퍼 원소의 MPI 데이터 타입, 루트 프로세스의 랭크, 커뮤니케이터)
-    MPI_Bcast(buff, size, MPI_INT, 0, MPI_COMM_WORLD);
+    /* 코드를 작성해 주세요 (1줄) */
+
+    
     sleep(1);
 
     // Broadcast 후 buffer 출력

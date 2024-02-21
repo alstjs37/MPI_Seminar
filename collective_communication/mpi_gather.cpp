@@ -1,4 +1,3 @@
-// practice mpi_gather
 #include <iostream>
 #include <unistd.h>
 #include <mpi.h>
@@ -33,7 +32,9 @@ int main(int argc, char *argv[]) {
 
     // MPI_Gather(송신버퍼의 시작 주소, 송신버퍼의 원소 갯수, 송신 버퍼 원소의 데이터 타입, 
     //            수신 버퍼의 주소, 수신할 원소의 갯수, 수신 버퍼 원소의 데이터 타입, 수신(루트)프로세스의 랭크, 커뮤니케이터)
-    MPI_Gather(&send_msg, 1, MPI_INT, buff, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    /* 코드를 작성해 주세요 (1줄) */
+    
+
 
     // 0을 루트로 사용, 0에서 각 프로세스가 보낸 정보 취합
     // 모든 프로세스(루트 포함)가 송신한 데이터를 취합하여 랭크 순서대로 저장

@@ -1,4 +1,3 @@
-// practice mpi_gather
 #include <iostream>
 #include <unistd.h>
 #include <mpi.h>
@@ -32,7 +31,8 @@ int main(int argc, char *argv[]) {
     // MPI_Scatter(송신 버퍼의 주소, 각 프로세스로 보내지는 원소 개수, 송신 버퍼 데이터 타입, 
     //             수신 버퍼 주소, 수신 버퍼 원소 갯수, 수신 버퍼의 데이터 타입, 송신 프로세스 랭크, 커뮤니케이터)
     // ROOT 프로세스는 데이터를 같은 크기로 나누어 각 프로세스에 랭크 순서대로 하나씩 전송
-    MPI_Scatter(send_msg, 1, MPI_INT, &buff, 1, MPI_INT, ROOT, MPI_COMM_WORLD);
+    /* 코드를 작성해 주세요 (1줄) */
+    
 
     cout << "[AFTER] RANK: " << rank << " AND I RECV (SCATTER): " << buff << endl;
 

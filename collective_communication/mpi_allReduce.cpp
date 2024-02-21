@@ -1,4 +1,3 @@
-// practice MPI_Reduce
 #include <iostream>
 #include <mpi.h>
 
@@ -45,7 +44,8 @@ int main(int argc, char *argv[]) {
 
     // 각 프로세스로부터 데이터를 모아 하나의 값으로 환산, 그 결과를 모든 프로세스에 저장
     // MPI_Allreduce(송신 버퍼의 시작 주소, 수신 버퍼의 시작 주소, 송신 버퍼의 원소 갯수, 송신 버퍼의 데이터 타입, 환산 연산자, 커뮤니케이터)
-    MPI_Allreduce(&sum, &result, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+    /* 코드를 작성해 주세요 (1줄) */
+    
 
     cout << "[RESULT] RANK: " << rank << " ALL REDUCE with SUM operation! RESULT = " << result << endl;
 

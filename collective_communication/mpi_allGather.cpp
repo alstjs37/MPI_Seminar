@@ -1,4 +1,3 @@
-// practice mpi_gather
 #include <iostream>
 #include <unistd.h>
 #include <mpi.h>
@@ -31,7 +30,9 @@ int main(int argc, char *argv[]) {
 
     // MPI_Allgather(송신 버퍼의 시작 주소, 송신 버퍼의 원소 개수, 송신 버퍼의 데이터 타입, 
     //               수신 버퍼의 주소, 각 프로세스로부터 수신된 데이터 갯수, 수신버퍼 데이터 타입, 커뮤니케이터)
-    MPI_Allgather(&send_msg, 1, MPI_INT, buff, 1, MPI_INT, MPI_COMM_WORLD);
+    /* 코드를 작성해 주세요 (1줄) */
+
+    
 
     // 프로세스 j의 데이터 -> 모든 수신 버퍼 j 번째 블록에 저장
     cout << "[AFTER] RANK: " << rank << " AND I RECV (ALLGATHER): ";
