@@ -139,7 +139,7 @@ int main(int argc, char *argv[]) {
     func2(rank, size);
     func3(rank, size);
 
-    // 결과를 출력해주는 함수 입니다.
+    // 결과를 출력해주는 함수입니다.
     printResult(rank, size);
 
     // MPI 종료
