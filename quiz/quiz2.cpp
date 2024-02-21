@@ -72,6 +72,7 @@ int main(int argc, char *argv[]) {
 
     MPI_Barrier(MPI_COMM_WORLD);
     sum = operation(rank, size, sum);
+    MPI_Barrier(MPI_COMM_WORLD);
     
     func2(rank, size, sum);
 
